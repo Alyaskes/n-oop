@@ -1,0 +1,23 @@
+Container contains 3 elements
+	This is two-dimensional array
+	Sum: 10
+		1 2 
+		3 4 
+			Size: 2
+		Output type: 1
+	This is diagonal matrix
+	Sum: 15
+		1 0 0 0 0 
+		0 2 0 0 0 
+		0 0 3 0 0 
+		0 0 0 4 0 
+		0 0 0 0 5 
+			Size: 5
+		Output type: 1
+	This is triangle matrix
+	Sum: 21
+		1 2 3 
+		0 4 5 
+		0 0 6 
+			Size: 3
+		Output type: 1
