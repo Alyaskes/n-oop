@@ -23,6 +23,18 @@ class Matrix:
         matrix.read_from(stream)
         return matrix
 
+    def sum(self):
+        s = 0
+        for item in self.data:
+            if isinstance(item, int):
+                s += item
+            else:
+                s += sum(item)
+        return s
+
+    def compare(self, other):
+        return self.sum() < other.sum()
+
 
 class TwoDimArray(Matrix):
     def __init__(self):
