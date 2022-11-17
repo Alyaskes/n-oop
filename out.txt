@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-Container contains 3 elements
-=======
-Only two dimensional arrays
->>>>>>> filter-out
+Container contains 4 elements
 	This is two-dimensional array
 	Sum: 10
 		1 2 
 		3 4 
 			Size: 2
 		Output type: 1
-<<<<<<< HEAD
 	This is diagonal matrix
 	Sum: 15
 		1 0 0 0 0 
@@ -19,8 +14,13 @@ Only two dimensional arrays
 		0 0 0 0 5 
 			Size: 5
 		Output type: 1
-=======
->>>>>>> filter-out
+	This is triangle matrix
+	Sum: 21
+		1 2 3 
+		0 4 5 
+		0 0 6 
+			Size: 3
+		Output type: 1
 	This is two-dimensional array
 	Sum: 81
 		1 3 5 

@@ -14,16 +14,14 @@ def main():
     print('Start')
 
     cont = Container()
-    print(cont)
-
     cont.read_from(input_file)
 
     print('Filled container')
 
     cont.sort()
     output_file = open(sys.argv[2], "w")
-    # cont.write_to(output_file)
-    cont.write_two_dim_array_to(output_file)
+    cont.write_to(output_file)
+    # cont.write_two_dim_array_to(output_file)
 
     cont.clear()
 
