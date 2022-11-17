@@ -1,12 +1,15 @@
 class Matrix:
     def __init__(self):
         self.size = 0
+        self.out_type = 0
 
     def read_from(self, stream):
         self.size = int(stream.readline().rstrip('\n'))
+        self.out_type = int(stream.readline().rstrip('\n'))
 
     def write_to(self, stream):
         stream.write(f'\tSize: {self.size}\n')
+        stream.write(f'\t\tOutput type: {self.out_type}\n')
 
     def sum(self):
         s = 0
@@ -58,9 +61,31 @@ class TwoDimArray(Matrix):
 
     def write_to(self, stream):
         stream.write('\tThis is two-dimensional array\n')
-        for row in self.data:
-            stream.write(f'\t\t{row}\n')
         stream.write(f'\tSum: {self.sum()}\n')
+
+        if self.out_type == 1:
+            stream.write('\t\t')
+            for i in range(self.size):
+                for j in range(self.size):
+                    stream.write(f'{self.data[i][j]} ')
+                stream.write('\n\t\t')
+
+        elif self.out_type == 2:
+            stream.write('\t\t')
+            for i in range(self.size):
+                for j in range(self.size):
+                    stream.write(f'{self.data[j][i]} ')
+                stream.write('\n\t\t')
+
+        elif self.out_type == 3:
+            stream.write('\t\t')
+            for i in range(self.size):
+                for j in range(self.size):
+                    stream.write(f'{self.data[i][j]} ')
+            stream.write('\n\t\t')
+        else:
+            stream.write('\tError matrix output type\n')
+
         super().write_to(stream)
 
 
@@ -75,7 +100,22 @@ class Diagonal(Matrix):
 
     def write_to(self, stream):
         stream.write('\tThis is diagonal matrix\n')
-        stream.write(f'\t\t{self.data}\n')
         stream.write(f'\tSum: {self.sum()}\n')
-        super().write_to(stream)
 
+        if self.out_type == 1 or self.out_type == 2:
+            stream.write('\t\t')
+            for i in range(self.size):
+                for j in range(self.size):
+                    stream.write('{} '.format(self.data[i] if i == j else 0))
+                stream.write('\n\t\t')
+
+        elif self.out_type == 3:
+            stream.write('\t\t')
+            for i in range(self.size):
+                for j in range(self.size):
+                    stream.write('{} '.format(self.data[i] if i == j else 0))
+            stream.write('\n\t\t')
+        else:
+            stream.write('\tError matrix output type\n')
+
+        super().write_to(stream)
