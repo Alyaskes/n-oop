@@ -33,6 +33,7 @@ def main():
 
     cont.write_to(output_file)
     # cont.write_two_dim_array_to(output_file)
+    cont.check_matrices()
 
     cont.clear()
 
