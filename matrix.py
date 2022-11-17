@@ -8,6 +8,15 @@ class Matrix:
     def write_to(self, stream):
         stream.write(f'\tSize: {self.size}\n')
 
+    def sum(self):
+        s = 0
+        for item in self.data:
+            if isinstance(item, int):
+                s += item
+            else:
+                s += sum(item)
+        return s
+
     @staticmethod
     def create_from(stream, line):
         k = int(line)
@@ -39,6 +48,7 @@ class TwoDimArray(Matrix):
         stream.write('\tThis is two-dimensional array\n')
         for row in self.data:
             stream.write(f'\t\t{row}\n')
+        stream.write(f'\tSum: {self.sum()}\n')
         super().write_to(stream)
 
 
@@ -54,4 +64,5 @@ class Diagonal(Matrix):
     def write_to(self, stream):
         stream.write('\tThis is diagonal matrix\n')
         stream.write(f'\t\t{self.data}\n')
+        stream.write(f'\tSum: {self.sum()}\n')
         super().write_to(stream)
