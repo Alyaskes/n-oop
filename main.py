@@ -22,7 +22,8 @@ def main():
 
     cont.sort()
     output_file = open(sys.argv[2], "w")
-    cont.write_to(output_file)
+    # cont.write_to(output_file)
+    cont.write_two_dim_array_to(output_file)
 
     cont.clear()
 

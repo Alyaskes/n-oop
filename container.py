@@ -43,6 +43,14 @@ class Container:
         self.start_node = None
         self.size = 0
 
+    def write_two_dim_array_to(self, stream):
+        stream.write('Only two dimensional arrays\n')
+
+        n = self.start_node
+        while n is not None:
+            n.data.write_two_dim_array_to(stream)
+            n = n.next
+
     def __len__(self):
         return self.size
 
